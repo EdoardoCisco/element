@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useState } from "react";
+import YouTube from "react-youtube";
 
 const LogoGroup = {
   backgroundImage:"url('/logo/logo4.svg')",
@@ -6,7 +8,7 @@ const LogoGroup = {
   width:"100%",
 
 };
-//layout:"fill",
+//layout:"fill",(()=>
 const fotoFade = [
   { image: <img src="/foto/photo000.jpg"></img> },
   { image: <img src="/foto/photo001.jpg"></img> },
@@ -44,25 +46,42 @@ const fotoPath = [
   "/foto/photo014.jpg",
   "/foto/photo015.jpg",
 ];
-const locandineSlide = [
-  { image: <img src="/locandine/photo001.jpg"></img> },
-  { image: <img src="/locandine/photo002.jpg"></img> },
-  { image: <img src="/locandine/photo003.jpg"></img> },
-  { image: <img src="/locandine/photo004.jpg"></img> },
-  { image: <img src="/locandine/photo005.jpg"></img> },
-  { image: <img src="/locandine/photo006.jpg"></img> },
-  { image: <img src="/locandine/photo007.jpg"></img> },
-  { image: <img src="/locandine/photo008.jpg"></img> },
-  { image: <img src="/locandine/photo009.jpg"></img> },
-  { image: <img src="/locandine/photo010.jpg"></img> },
+const locPath = [
+  "/locandine/photo001.jpg",
+  "/locandine/photo002.jpg",
+  "/locandine/photo003.jpg",
+  "/locandine/photo004.jpg",
+  "/locandine/photo005.jpg",
+  "/locandine/photo006.jpg",
+  "/locandine/photo007.jpg",
+  "/locandine/photo008.jpg",
+  "/locandine/photo009.jpg",
+  "/locandine/photo010.jpg",
 
 ];
 
+//export default class YoutubeVideo 
 
 export default function elementPage(){
+  const [btnImg, setBtnImg] = useState(0) //var per img  
+  const [btnLoc, setBtnLoc] = useState(0) //var per img  
+  
+//  render() {
+  
+    const opts = {
+      height: "640",
+      width: "1290",
+      playerVars: {
+        autoplay: 1,
+      },
+_onReady(event) {
+  event.target.pauseVideo();
+}
+    }
+ 
   return (
   <div className="w-screen bg-bgElement">
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center space-y-16">
       <div>
       <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans" style={LogoGroup} >
         La band fonda le basi nel 2014, trovando radici nella provincia vicentina.
@@ -89,13 +108,23 @@ export default function elementPage(){
         Gli Element dal 2015 hanno collezzionato decine di live in locali ed open air, condividendo il palco con nomi come Tom Angelripper, Onkel Tom (Sodom), Fleshgod Apocalypse, Methedras, Ulvedharr, Kanseil, Sinphobia, A Tear Beyond e altri.
       </p>
      </div>
+     <YouTube videoId="sTnm5jvjgjM" 
+            opts={opts}/>
      <div>
-      <img src={fotoPath.map((val)=> {return fotoPath[val]})}></img>
+      <button onClick={async ()=> {setBtnImg((btnImg+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
+      <img src={fotoPath[btnImg]}></img>
+      <button onClick={async ()=> { if (btnImg == 0 ) {setBtnImg(fotoPath.length - 1)} else setBtnImg( (btnImg-1))}} className="text-orange-50">LEFT</button>
      </div>
+      <div>
 
+      <button onClick={async ()=> {setBtnLoc((btnLoc+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
+      <img src={locPath[btnLoc]}></img>
+      <button onClick={async ()=> { if (btnLoc == 0 ) {setBtnLoc(fotoPath.length - 1)} else setBtnLoc( (btnLoc-1))}} className="text-orange-50">LEFT</button>
+      </div>
     </div>
   </div>
   );
+  
 }
 
 //<div>
