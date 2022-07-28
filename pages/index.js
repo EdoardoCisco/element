@@ -108,7 +108,7 @@ _onReady(event) {
         Gli Element dal 2015 hanno collezzionato decine di live in locali ed open air, condividendo il palco con nomi come Tom Angelripper, Onkel Tom (Sodom), Fleshgod Apocalypse, Methedras, Ulvedharr, Kanseil, Sinphobia, A Tear Beyond e altri.
       </p>
      </div>
-     <YouTube videoId="sTnm5jvjgjM" 
+     <YouTube videoId="9ZBjtsx7Th0" 
             opts={opts}/>
      <div>
       <button onClick={async ()=> {setBtnImg((btnImg+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
