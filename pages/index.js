@@ -72,7 +72,7 @@ export default function elementPage(){
       height: "640",
       width: "1290",
       playerVars: {
-        autoplay: 1,
+        autoplay: 0,
       },
 _onReady(event) {
   event.target.pauseVideo();
@@ -108,8 +108,19 @@ _onReady(event) {
         Gli Element dal 2015 hanno collezzionato decine di live in locali ed open air, condividendo il palco con nomi come Tom Angelripper, Onkel Tom (Sodom), Fleshgod Apocalypse, Methedras, Ulvedharr, Kanseil, Sinphobia, A Tear Beyond e altri.
       </p>
      </div>
+     
      <YouTube videoId="9ZBjtsx7Th0" 
             opts={opts}/>
+      <div className="flex flex-row items-center justify-between space-x-10">
+        <img src ='photoBandWrote.jpg'></img>
+        <p className="text-gray-50 font-sans px-6 pw-2 max-w-7xl">
+          <strong>Backline Element: 4 componenti</strong><br/>
+           {'\u2022'}3 voci (una principale e 2 cori)<br/>
+           {'\u2022'}2 chitarre (testata personale)<br/>
+           {'\u2022'}basso (testata personale)<br/>
+           {'\u2022'}batteria<br/>
+        </p>
+     </div>
      <div>
       <button onClick={async ()=> {setBtnImg((btnImg+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
       <img src={fotoPath[btnImg]}></img>
@@ -120,6 +131,11 @@ _onReady(event) {
       <button onClick={async ()=> {setBtnLoc((btnLoc+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
       <img src={locPath[btnLoc]}></img>
       <button onClick={async ()=> { if (btnLoc == 0 ) {setBtnLoc(fotoPath.length - 1)} else setBtnLoc( (btnLoc-1))}} className="text-orange-50">LEFT</button>
+      </div>
+      <div className="flex flex-row items-center justify-between space-x-14">
+          <a href="">
+          
+          </a>
       </div>
     </div>
   </div>
@@ -137,3 +153,5 @@ _onReady(event) {
 //          <img src={fotoPath[3]}></img>
 //        </div>
       // {LogoGroup.icon}
+
+   //    Utilizziamo basi elettroniche gestite direttamente dal batterista con tablet (jack da 3,5 mm).
