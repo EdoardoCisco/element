@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import YouTube from "react-youtube";
+import Carousel from "../components/Carousel.js";
 
 const LogoGroup = {
   backgroundImage:"url('/logo/logo4.svg')",
@@ -9,24 +10,24 @@ const LogoGroup = {
 
 };
 //layout:"fill",(()=>
-const fotoFade = [
-  { image: <img src="/foto/photo000.jpg"></img> },
-  { image: <img src="/foto/photo001.jpg"></img> },
-  { image: <img src="/foto/photo002.jpg"></img> },
-  { image: <img src="/foto/photo003.jpg"></img> },
-  { image: <img src="/foto/photo004.jpg"></img> },
-  { image: <img src="/foto/photo005.jpg"></img> },
-  { image: <img src="/foto/photo006.jpg"></img> },
-  { image: <img src="/foto/photo007.jpg"></img> },
-  { image: <img src="/foto/photo008.jpg"></img> },
-  { image: <img src="/foto/photo009.jpg"></img> },
-  { image: <img src="/foto/photo010.jpg"></img> },
-  { image: <img src="/foto/photo011.jpg"></img> },
-  { image: <img src="/foto/photo012.jpg"></img> },
-  { image: <img src="/foto/photo013.jpg"></img> },
-  { image: <img src="/foto/photo014.jpg"></img> },
-  { image: <img src="/foto/photo015.jpg"></img> },
-];
+// const fotoFade = [
+//   { image: <img src="/foto/photo000.jpg"></img> },
+//   { image: <img src="/foto/photo001.jpg"></img> },
+//   { image: <img src="/foto/photo002.jpg"></img> },
+//   { image: <img src="/foto/photo003.jpg"></img> },
+//   { image: <img src="/foto/photo004.jpg"></img> },
+//   { image: <img src="/foto/photo005.jpg"></img> },
+//   { image: <img src="/foto/photo006.jpg"></img> },
+//   { image: <img src="/foto/photo007.jpg"></img> },
+//   { image: <img src="/foto/photo008.jpg"></img> },
+//   { image: <img src="/foto/photo009.jpg"></img> },
+//   { image: <img src="/foto/photo010.jpg"></img> },
+//   { image: <img src="/foto/photo011.jpg"></img> },
+//   { image: <img src="/foto/photo012.jpg"></img> },
+//   { image: <img src="/foto/photo013.jpg"></img> },
+//   { image: <img src="/foto/photo014.jpg"></img> },
+//   { image: <img src="/foto/photo015.jpg"></img> },
+// ];
 
 const fotoPath = [
   "/foto/photo000.jpg",
@@ -81,9 +82,13 @@ _onReady(event) {
  
   return (
   <div className="w-screen bg-bgElement">
-    <div className="flex flex-col items-center space-y-16">
+    <div className="flex flex-col items-center space-y-16 pt-10">
+      <div className="flex flex-row items-center gap-x-48 ">
+        <Image className=" shadow-none" src="/logo/logo.jpg" width={220} height={200}/>
+        <Image className="" src="/logo/logo.jpg" width={220} height={200}/>
+      </div>
       <div>
-      <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans" style={LogoGroup} >
+        <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans"  >
         La band fonda le basi nel 2014, trovando radici nella provincia vicentina.
         Fin dagli albori, spinti dal desiderio di creare qualcosa di autentico iniziano a scrivere musica propria.
         Nel 2015 il trio formato da Sebastiano Fracasso (vocals & guitar), Giulio Zonin (bass), Elia Rolenti (drums)
@@ -106,34 +111,28 @@ _onReady(event) {
         Dal 2021 ad oggi iniziano la stesura del nuovo disco, con termine dei lavori al 2022. 
         Questo nuovo lavoro discografico li impegna nella creazione di uno stile compositivo e sonoro completamente autentico.
         Gli Element dal 2015 hanno collezzionato decine di live in locali ed open air, condividendo il palco con nomi come Tom Angelripper, Onkel Tom (Sodom), Fleshgod Apocalypse, Methedras, Ulvedharr, Kanseil, Sinphobia, A Tear Beyond e altri.
-      </p>
+        </p>
      </div>
-     <YouTube videoId="9ZBjtsx7Th0" 
-            opts={opts}/>
-     <div>
-      <button onClick={async ()=> {setBtnImg((btnImg+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
-      <img src={fotoPath[btnImg]}></img>
-      <button onClick={async ()=> { if (btnImg == 0 ) {setBtnImg(fotoPath.length - 1)} else setBtnImg( (btnImg-1))}} className="text-orange-50">LEFT</button>
-     </div>
-      <div>
+     <YouTube videoId="sTnm5jvjgjM"opts={opts}/>
 
-      <button onClick={async ()=> {setBtnLoc((btnLoc+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
-      <img src={locPath[btnLoc]}></img>
-      <button onClick={async ()=> { if (btnLoc == 0 ) {setBtnLoc(fotoPath.length - 1)} else setBtnLoc( (btnLoc-1))}} className="text-orange-50">LEFT</button>
-      </div>
+     <Carousel 
+      className="flex justify-center my-10" 
+      list={fotoPath}
+      state={btnImg} 
+      setState={setBtnImg}
+      width={900}
+      height={500}
+      />
+
+     <Carousel
+      className="flex justify-center my-10" 
+      list={locPath}
+      state={btnLoc}
+      setState={setBtnLoc}
+      width={400}
+      height={600}
+      />
     </div>
-  </div>
-  );
-  
-}
+  </div>)
+} 
 
-//<div>
-//          <img src={fotoPath[1]}></img>
-//        </div>
-//        <div>
-//          <img src={fotoPath[2]}></img>
-//        </div>
-//        <div>
-//          <img src={fotoPath[3]}></img>
-//        </div>
-      // {LogoGroup.icon}
