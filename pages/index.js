@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link.js";
 import { useState } from "react";
 import YouTube from "react-youtube";
 import Carousel from "../components/Carousel.js";
@@ -47,8 +48,8 @@ export default function ElementPage() {
   
   
     const opts = {
-      height: " ",
-      width: " ",
+      height: "auto",
+      width: "auto",
       playerVars: {
         autoplay: 0,
       },
@@ -124,10 +125,19 @@ _onReady(event) {
         />
       </div>
 
-      <div>
-      
+      <div className="flex flex-row items-center justify-between space-x-10 my-10">
+
+       <Link href="https://open.spotify.com/artist/7wRvHLMJxNi9LB0rXzgRkP?si=WjZahnEFS_-L7_BjraXIeg" passHref={true}>
+        <img className="" src="spotify.png"/>
+       </Link>
+
+       <Link href="https://www.facebook.com/Elementbandmetal" passHref={true}>
+        <img className="" src="facebook.svg"/>
+       </Link>
+
+       <Link href="https://www.instagram.com/element_band" passHref={true}>
+        <img className="w-20 h-20" src="instagram.png"/>
+       </Link>
       </div>
-
-
-    </div>)
-}
+    </div>
+)}
