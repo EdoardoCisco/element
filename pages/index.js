@@ -47,8 +47,8 @@ export default function elementPage() {
   
   
     const opts = {
-      height: "auto",
-      width: "auto",
+      height: " ",
+      width: " ",
       playerVars: {
         autoplay: 0,
       },
@@ -62,7 +62,7 @@ _onReady(event) {
   <div className="w-screen bg-bgElement">
       <div className="flex flex-col items-center space-y-16 pt-10">
         <div className="flex flex-row items-center gap-x-48 ">
-          <Image className=" shadow-none" src="/logo/logo.jpg" width={220} height={200} />
+          <Image className=" shadow-none" src="/logo/logo1.jpg" width={220} height={200} />
         </div>
       <div>
         <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans bg-no-repeat bg-center bg-opacity-40" style={LogoGroup} >
@@ -91,11 +91,9 @@ _onReady(event) {
        </p>
      </div>
      
-     <YouTube videoId="9ZBjtsx7Th0" 
-            opts={opts}/>
+     <YouTube videoId="9ZBjtsx7Th0"  />
 
       <div className="flex flex-row items-center justify-between space-x-10">
-        <img src ='photoBandWrote.jpg' className="w-auto h-auto"></img>
         <p className="text-gray-50 font-sans px-6 pw-2 max-w-7xl">
           <strong>Backline Element: 4 componenti</strong><br/><br/>
            {'\u2022'}3 voci (una principale e 2 cori)<br/>
@@ -112,7 +110,7 @@ _onReady(event) {
           setState={setBtnImg}
           width={900}
           height={500}
-          llen={16}
+          llen={15}
         />
 
         <Carousel
@@ -127,3 +125,5 @@ _onReady(event) {
       </div>
     </div>)
 }
+        //<img src ='photoBandWrote.jpg' className="w-auto h-auto"></img>
+//className="max-h-fit max-w-fit min-h-fit min-w-fit"
