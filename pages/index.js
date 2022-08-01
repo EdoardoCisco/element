@@ -125,7 +125,7 @@ _onReady(event) {
         />
       </div>
 
-      <div className="flex flex-row items-center justify-between space-x-10 my-10">
+      <div className="flex flex-row items-center justify-between space-x-10 mt-10">
 
        <Link href="https://open.spotify.com/artist/7wRvHLMJxNi9LB0rXzgRkP?si=WjZahnEFS_-L7_BjraXIeg" passHref={true}>
         <img className="" src="spotify.png"/>
