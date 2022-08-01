@@ -42,8 +42,8 @@ const locPath = [
 
 
 export default function elementPage() {
-  const [btnImg, setBtnImg] = useState(0) //var per img  
-  const [btnLoc, setBtnLoc] = useState(0) //var per img  
+  const [btnImg, setBtnImg] = UseState(0) //var per img  
+  const [btnLoc, setBtnLoc] = UseState(0) //var per img  
   
   
     const opts = {
