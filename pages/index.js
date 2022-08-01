@@ -65,7 +65,7 @@ _onReady(event) {
           <Image className=" shadow-none" src="/logo/logo1.jpg" width={220} height={200} />
         </div>
       <div>
-        <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans bg-no-repeat bg-center bg-opacity-40" style={LogoGroup} >
+        <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans ">
             La band fonda le basi nel 2014, trovando radici nella provincia vicentina.
             Fin dagli albori, spinti dal desiderio di creare qualcosa di autentico iniziano a scrivere musica propria.
             Nel 2015 il trio formato da Sebastiano Fracasso (vocals & guitar), Giulio Zonin (bass), Elia Rolenti (drums)
@@ -91,7 +91,7 @@ _onReady(event) {
        </p>
      </div>
      
-     <YouTube videoId="9ZBjtsx7Th0"  />
+     <YouTube videoId="9ZBjtsx7Th0" opts={opts}/>
 
       <div className="flex flex-row items-center justify-between space-x-10">
         <p className="text-gray-50 font-sans px-6 pw-2 max-w-7xl">
@@ -123,7 +123,11 @@ _onReady(event) {
           llen={10}
         />
       </div>
+
+      <div>
+      
+      </div>
+
+
     </div>)
 }
-        //<img src ='photoBandWrote.jpg' className="w-auto h-auto"></img>
-//className="max-h-fit max-w-fit min-h-fit min-w-fit"
