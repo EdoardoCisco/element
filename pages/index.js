@@ -41,7 +41,7 @@ const locPath = [
 ];
 
 
-export default function elementPage() {
+export default function ElementPage() {
   const [btnImg, setBtnImg] = useState(0) //var per img  
   const [btnLoc, setBtnLoc] = useState(0) //var per img  
   
