@@ -3,10 +3,9 @@ import { useState } from "react";
 import YouTube from "react-youtube";
 
 const LogoGroup = {
-  backgroundImage:"url('/logo/logo4.svg')",
-  height:"100%",
-  width:"100%",
-
+  backgroundImage:"url('/logo/logo1.jpg')",
+  height:"auto",
+  width:"auto",
 };
 //layout:"fill",(()=>
 const fotoFade = [
@@ -44,7 +43,6 @@ const fotoPath = [
   "/foto/photo012.jpg",
   "/foto/photo013.jpg",
   "/foto/photo014.jpg",
-  "/foto/photo015.jpg",
 ];
 const locPath = [
   "/locandine/photo001.jpg",
@@ -69,8 +67,8 @@ export default function elementPage(){
 //  render() {
   
     const opts = {
-      height: "640",
-      width: "1290",
+      height: "auto",
+      width: "auto",
       playerVars: {
         autoplay: 0,
       },
@@ -83,7 +81,7 @@ _onReady(event) {
   <div className="w-screen bg-bgElement">
     <div className="flex flex-col items-center space-y-16">
       <div>
-      <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans" style={LogoGroup} >
+      <p className="text-justify text-white px-6 pw-2 max-w-7xl font-sans bg-no-repeat bg-center bg-opacity-40" style={LogoGroup} >
         La band fonda le basi nel 2014, trovando radici nella provincia vicentina.
         Fin dagli albori, spinti dal desiderio di creare qualcosa di autentico iniziano a scrivere musica propria.
         Nel 2015 il trio formato da Sebastiano Fracasso (vocals & guitar), Giulio Zonin (bass), Elia Rolenti (drums)
@@ -112,24 +110,25 @@ _onReady(event) {
      <YouTube videoId="9ZBjtsx7Th0" 
             opts={opts}/>
       <div className="flex flex-row items-center justify-between space-x-10">
-        <img src ='photoBandWrote.jpg'></img>
+        <img src ='photoBandWrote.jpg' className="w-auto h-auto"></img>
         <p className="text-gray-50 font-sans px-6 pw-2 max-w-7xl">
-          <strong>Backline Element: 4 componenti</strong><br/>
+          <strong>Backline Element: 4 componenti</strong><br/><br/>
            {'\u2022'}3 voci (una principale e 2 cori)<br/>
            {'\u2022'}2 chitarre (testata personale)<br/>
            {'\u2022'}basso (testata personale)<br/>
-           {'\u2022'}batteria<br/>
+           {'\u2022'}batteria<br/><br/>  
+            Utilizziamo basi elettroniche gestite direttamente dal batterista con tablet (jack da 3,5 mm).
         </p>
      </div>
      <div>
       <button onClick={async ()=> {setBtnImg((btnImg+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
-      <img src={fotoPath[btnImg]}></img>
+      <img src={fotoPath[btnImg]}className="w-auto h-auto"></img>
       <button onClick={async ()=> { if (btnImg == 0 ) {setBtnImg(fotoPath.length - 1)} else setBtnImg( (btnImg-1))}} className="text-orange-50">LEFT</button>
      </div>
       <div>
 
       <button onClick={async ()=> {setBtnLoc((btnLoc+1)%fotoPath.length)}} className="text-orange-50">RIGHT</button>
-      <img src={locPath[btnLoc]}></img>
+      <img src={locPath[btnLoc]}className="w-auto h-auto"></img>
       <button onClick={async ()=> { if (btnLoc == 0 ) {setBtnLoc(fotoPath.length - 1)} else setBtnLoc( (btnLoc-1))}} className="text-orange-50">LEFT</button>
       </div>
       <div className="flex flex-row items-center justify-between space-x-14">
